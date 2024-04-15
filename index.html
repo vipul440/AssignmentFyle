@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Bootstrap JS (Popper.js is required for tooltips) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.min.js"></script>
+    <link
+      href="https://getbootstrap.com/docs/5.3/assets/css/docs.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <!-- <h1>Tax Calculator</h1> -->
+      <form id="taxForm">
+        <div class="form-group">
+          <label for="income">
+            Enter gross annual income
+            <span
+              class="tooltip"
+              data-bs-toggle="tooltip"
+              data-bs-placement="top"
+            >
+              <i class="bi bi-question-circle" aria-hidden="true"></i>
+              <span class="tooltiptext"
+                >Gross annual income is your total salary in a year before any
+                deductions</span
+              >
+            </span>
+          </label>
+          <div class="input-group">
+            <input id="income" class="form-control" required />
+            <span
+              class="error-icon error-tooltip"
+              style="display: none"
+              data-bs-toggle="tooltip"
+              data-bs-tooltip="tooltip"
+              data-bs-placement="top"
+            >
+              <i class="bi bi-exclamation-circle"></i>
+              <span class="tooltiptext">Please enter Number only</span>
+            </span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="extraIncome">
+            Enter extra income
+            <span
+              class="tooltip"
+              data-bs-toggle="tooltip"
+              data-bs-placement="top"
+            >
+              <i class="bi bi-question-circle" aria-hidden="true"></i>
+              <span class="tooltiptext"
+                >Extra income is nothing only the enhancement in the
+                income</span
+              >
+            </span>
+          </label>
+          <div class="input-group">
+            <input id="extraIncome" class="form-control" required />
+            <span
+              class="error-icon error-tooltip"
+              style="display: none"
+              data-bs-toggle="tooltip"
+              data-bs-tooltip="tooltip"
+              data-bs-placement="top"
+            >
+              <i class="bi bi-exclamation-circle"></i>
+              <span class="tooltiptext">Please enter Number only</span>
+            </span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="ageGroup">
+            Enter age group
+            <span
+              class="tooltip"
+              data-bs-toggle="tooltip"
+              data-bs-placement="top"
+            >
+              <i class="bi bi-question-circle" aria-hidden="true"></i>
+              <span class="tooltiptext">Select from the given age group</span>
+            </span>
+          </label>
+          <div class="input-group">
+            <select id="ageGroup" class="form-control" required>
+              <option value="" disabled selected></option>
+              <option value="<40">&lt;40</option>
+              <option value="40-60">≥40 &lt;60</option>
+              <option value="≥60">&ge;60</option>
+            </select>
+            <span
+              class="error-icon error-tooltip"
+              style="display: none"
+              data-bs-toggle="tooltip"
+              data-bs-tooltip="tooltip"
+              data-bs-placement="top"
+            >
+              <i class="bi bi-exclamation-circle"></i>
+              <span class="tooltiptext">Please enter Number only</span>
+            </span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="deductions">
+            Enter total applicable deductions
+            <span
+              class="tooltip"
+              data-bs-toggle="tooltip"
+              data-bs-placement="top"
+            >
+              <i class="bi bi-question-circle" aria-hidden="true"></i>
+              <span class="tooltiptext">Deductions</span>
+            </span>
+          </label>
+          <div class="input-group">
+            <input id="deductions" class="form-control" required />
+            <span
+              class="error-icon error-tooltip"
+              style="display: none"
+              data-bs-toggle="tooltip"
+              data-bs-tooltip="tooltip"
+              data-bs-placement="top"
+            >
+              <i class="bi bi-exclamation-circle"></i>
+              <span class="tooltiptext">Please enter Number only</span>
+            </span>
+          </div>
+        </div>
+
+        <button type="submit" class="btn" id="myBtn">Submit</button>
+      </form>
+      <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content" id="outer-box">
+          <span class="close">&times;</span>
+
+          <div id="inner-box1"></div>
+          <div id="inner-box2">
+            <h4 class="modal-title" id="exampleModalLabel">
+              Your Overall Income
+            </h4>
+            <h5 id="overallIncome"></h5>
+            <h6 id="taxDeductions">After tax deductions</h6>
+            <button id="closeButton">close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+  </body>
+</html>
